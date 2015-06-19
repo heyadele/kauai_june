@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Kauai Economic Dashboard - Help</title>
+    <meta name="description" content="This dashboard provides Kauai economic data at a glance.
+">
+
+
+    <!--<script type="text/javascript" src="js/vendor/d3.v3.min.js"></script>-->
+    <script type="text/javascript" src="../js/vendor/d3.js"></script>
+    <script type="text/javascript" src="../js/vendor/jquery.min.js"></script>
+    <script src="../js/vendor/queue.min.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/polyfill.js"></script>
+    <link rel="stylesheet" href="../js/vendor/jquery-ui.css">
+    <!-- noUiSlider stuff -->
+    <script src="../js/vendor/nouislider/jquery.nouislider.all.min.js"></script>
+    <link rel="stylesheet" href="../js/vendor/nouislider/jquery.nouislider.min.css">
+    <link rel="stylesheet" href="../js/vendor/nouislider/jquery.nouislider.pips.min.css">
+    <!-- Twitter Bootstrap includes -->
+    <script src="../js/vendor/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="canonical" href="http://uhero.hawaii.edu/static/dashboard/kauai/help/">
+
+    <script>
+        $(document).ready(function() {
+            Cufon.replace('h4.dash_sub',{
+                fontFamily: 'GothamLight'
+            });
+            Cufon.replace('h4.dash_title',{
+                fontFamily: 'GothamBold'
+            });
+        });
+    </script>
+</head>
+
+
+  <body>
+
+    <div id="dash-header">
+	<div class="dash-wrapper">
+		<form action="" class="mailing-list">
+			<fieldset>
+				<ul class="topmenu">
+					<li><a href="http://www.facebook.com/pages/uhero-The-Economic-Research-Organization-at-the-University-of-Hawaii/144885908919188?sk=wall" class="facebook" target="_blank">Like Us on Facebook</a> | <a href="/4/become-a-sponsor">Become a Sponsor</a> | </li>
+				</ul>
+				<label for="email"><a href="/31/contact">Join Mailing List</a></label>
+			</fieldset>
+		</form>
+		<h1><a href="/">UHERO the economic research organization at the university of hawai�i</a></h1>
+		<form accept-charset="utf-8" class="search" method="get" action="/search">				
+			<fieldset>
+				<input name="q" type="text" class="text" value="Search" title="Search" id="SearchQ" >					<input type="submit" value="search" />
+			</fieldset>
+		</form>
+	</div>
+
+	<div id="breadcrumb-wrapper">
+		<div id="breadcrumb">
+			<ol>
+				<li class="first"><a href="/"><span></span>Home</a></li>
+				<li> > </li>
+				<li><a href="/134/uhero-dashboard" class="currentPage currentSection navButton" id="occupations-explorer-with-tableButton"><span></span>UHERO Dashboard Project</a></li>
+				<li> > </li>
+				<li><a href="../index.html">Kauai Dashboard</a></li>
+			</ol>
+		</div>
+	</div>
+</div>
+
+
+    <div class="page-content">
+      
+        <div class="wrapper">
+          
+            <div id="dash-title">
+	<span id="title-right"><a href="../index.html">Back</a></span>
+	<h4 class="dash_title">Kauai Economic Dashboard</h4>
+	<h4 class="dash_sub"><a href="http://www.kauai.gov/Government/Departments/EconomicDevelopment/tabid/59/Default.aspx">Kauai County Office of Economic Development</a></h4>
+	<a href="http://www.kauai.gov/Government/Departments/EconomicDevelopment/tabid/59/Default.aspx"><img id="k-logo" src="../assets/img/Kauai_seal1.png"></a>
+<div id="clear"></div>
+          
+          
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">About the Kauai Dashboard</h1>
+  </header>
+
+  <article class="post-content">
+    <p>This dashboard provides Kauai economic data at a glance. The current version is a prototype. All features are subject to change without notice.</p>
+
+<h3 id="feature-overview">Feature Overview</h3>
+
+<p>The date range for graphs is controlled by the sliders below each graph.</p>
+
+<p><img src="../assets/sliders.png" alt="left-hand sliders" /></p>
+
+<p><img src="../assets/slider2.png" alt="right-hand slider" /></p>
+
+<p>You can select a new series to graph by clicking on its row in the table.</p>
+
+<p><img src="../assets/select_new_series.png" alt="select new series" /></p>
+
+<p>You can add a data series to compare to by clicking the compare box in the table.</p>
+
+<p><img src="../assets/compare_series.png" alt="compare series" /></p>
+
+<p>The table has little <a href="http://en.wikipedia.org/wiki/Sparkline">sparkline</a> graphs that allow you to see thumbnail views of movements of each series over time.</p>
+
+<p><img src="../assets/sparklines.png" alt="sparklines" /></p>
+
+<p>You can collapse and expand sections of the table as you like.</p>
+
+<p><img src="../assets/collapse.png" alt="collapse" /></p>
+
+<p><img src="../assets/expand.png" alt="expand" /></p>
+
+<p>On the labor market page, we have implemented a <a href="http://en.wikipedia.org/wiki/Treemapping">treemap</a> that shows the relative size of each industry in Kauai. </p>
+
+<p><img src="../assets/treemap.png" alt="treemap" /></p>
+
+<p>If you hover over a rectangle its shows you the number of jobs in the sector and its year-on-year growth rate for the selected period.</p>
+
+<p><img src="../assets/treemap_hover.png" alt="treemap hover" /></p>
+
+<p>Move the slider and see how the relative importance of sectors ebbs and flows over time.  (For example, see how big the construction industry was in early 1993!)</p>
+
+<p><img src="../assets/treemap_slider.png" alt="treemap slider" /></p>
+
+<hr />
+
+<p>For more information, email us at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#117;&#104;&#101;&#114;&#111;&#064;&#104;&#097;&#119;&#097;&#105;&#105;&#046;&#101;&#100;&#117;">&#117;&#104;&#101;&#114;&#111;&#064;&#104;&#097;&#119;&#097;&#105;&#105;&#046;&#101;&#100;&#117;</a>.</p>
+
+
+  </article>
+
+</div>
+
+
+
+        </div>
+
+    </div>
+
+    <footer>
+	<div id="dash-footer">
+
+		<div class="wrap-inner">
+
+			<p class="left">
+				2424 Maile Way, Saunders Hall 540 | Honolulu, Hawaii 96822<br />
+				(808) 956-2325 | <a href="mailto:uhero@hawaii.edu"><strong>uhero@hawaii.edu</strong></a>
+			</p>
+
+			<p class="right">
+				<strong>External Links</strong> <a href="http://www.economics.hawaii.edu/" target="_blank">Department of Economics</a> | <a href="http://www.ssri.hawaii.edu/" target="_blank">Social Science Research Institute</a> | <a href="http://www.socialsciences.hawaii.edu/" target="_blank">College of Social Sciences</a><br />
+				<strong>Website Design &amp; Development</strong> <a href="http://walltowall.com" target="_blank">Wall-to-Wall Studios</a>
+			</p>
+
+		</div>
+		<!-- / wrap-inner -->
+
+	</div>
+</footer>
+<script src="../js/data_load.js"></script>
+<script src="../js/time_series_chart.js"></script>
+<script src="../js/time_slice_chart.js"></script>
+<script src="../js/data_table.js"></script>
+<script src="../js/viz.js"></script>
+<!--Gotham font includes-->
+  <script type="text/javascript" src="js2/swfobject.js"></script><script type="text/javascript" src="../js2/cufon-yui.js"></script><script type="text/javascript" src="../js2/TrajanPro_400-TrajanPro_700.font.js"></script><script type="text/javascript" src="../js2/GothamLight_300.font.js"></script><script type="text/javascript" src="../js2/GothamBold_400.font.js"></script>
+
+  </body>
+
+</html>

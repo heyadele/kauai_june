@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Kauai Economic Dashboard</title>
+    <meta name="description" content="This dashboard provides Kauai economic data at a glance.
+">
+
+
+    <!--<script type="text/javascript" src="js/vendor/d3.v3.min.js"></script>-->
+    <script type="text/javascript" src="js/vendor/d3.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/queue.min.js"></script>
+    <script src="js/vendor/jquery-ui.js"></script>
+    <script src="js/polyfill.js"></script>
+    <link rel="stylesheet" href="js/vendor/jquery-ui.css">
+    <!-- noUiSlider stuff -->
+    <script src="js/vendor/nouislider/jquery.nouislider.all.min.js"></script>
+    <link rel="stylesheet" href="js/vendor/nouislider/jquery.nouislider.min.css">
+    <link rel="stylesheet" href="js/vendor/nouislider/jquery.nouislider.pips.min.css">
+    <!-- Twitter Bootstrap includes -->
+    <script src="js/vendor/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="canonical" href="http://uhero.github.io/">
+
+    <script>
+        $(document).ready(function() {
+            Cufon.replace('h4.dash_title',{
+                fontFamily: 'GothamBold',
+                fontSize: '30px'
+            });
+            Cufon.replace('h4.dash_sub',{
+                fontFamily: 'GothamLight',
+                fontSize: '14px'
+            });
+        });
+    </script>
+</head>
+
+
+  <body>
+
+    <div id="dash-header">
+	<div class="dash-wrapper">
+		<form action="" class="mailing-list">
+			<fieldset>
+				<ul class="topmenu">
+					<li><a href="http://www.facebook.com/pages/uhero-The-Economic-Research-Organization-at-the-University-of-Hawaii/144885908919188?sk=wall" class="facebook" target="_blank">Like Us on Facebook</a> | <a href="/4/become-a-sponsor">Become a Sponsor</a> | </li>
+				</ul>
+				<label for="email"><a href="/31/contact">Join Mailing List</a></label>
+			</fieldset>
+		</form>
+		<h1><a href="/">UHERO the economic research organization at the university of hawai�i</a></h1>
+		<form accept-charset="utf-8" class="search" method="get" action="/search">				
+			<fieldset>
+				<input name="q" type="text" class="text" value="Search" title="Search" id="SearchQ" >					<input type="submit" value="search" />
+			</fieldset>
+		</form>
+	</div>
+
+	<div id="breadcrumb-wrapper">
+		<div id="breadcrumb">
+			<ol>
+				<li class="first"><a href="/"><span></span>Home</a></li>
+				<li> > </li>
+				<li><a href="/134/uhero-dashboard" class="currentPage currentSection navButton" id="occupations-explorer-with-tableButton"><span></span>UHERO Dashboard Project</a></li>
+				<li> > </li>
+				<li><a href="./index.html">Kauai Dashboard</a></li>
+			</ol>
+		</div>
+	</div>
+</div>
+
+
+    <div class="page-content">
+      
+        <div class="wrapper">
+          
+            <div id="dash-title">
+	<span id="title-right"><a href="./help/index.html">Help</a></span>
+	<h4 class="dash_title">Kauai Economic Dashboard</h4>
+	<h4 class="dash_sub"><a href="http://www.kauai.gov/Government/Departments/EconomicDevelopment/tabid/59/Default.aspx">Kauai County Office of Economic Development</a></h4>
+	<a href="http://www.kauai.gov/Government/Departments/EconomicDevelopment/tabid/59/Default.aspx"><img id="k-logo" src="./assets/img/Kauai_Seal_crop2.png"></a>
+	<div id="clear"></div>
+</div>
+          
+          
+          <div id="content">
+	<div id="nav"></div>
+	
+	<div id="dashboard">
+		<div id="headline_container"><h2 id="headline"></h2></div>
+		<div id="charts_area"></div>
+		<div id="line_chart_slider_container">
+		  <h3 id="date_line_left">1989Q1</h3>
+	 		<h3 id="date_line_right">2014Q2</h3>
+		</div>
+		<div id="time_slice_slider_container"></div>
+	</div>
+	
+	<div id="data">
+		<div id="controls">
+			<div id="sparkline_slider_container">
+					 <!--<h3 id="date_series_left">1989Q1</h3>-->
+					 <!--<h3 id="date_series_right">2014Q2</h3>-->
+			</div>
+			<div id="datatable_slider_container">
+					 <!--<h3 id="date_table">2014Q2</h3>-->
+			</div>
+            <div id="secondary_controls">
+                <div id="frequency_controls">
+                    Frequency: 
+                    <span id="freq_a">A</span>
+                    <span id="freq_q_pipe"> | </span>
+                    <span id="freq_q">Q</span>
+                    <span id="freq_m_pipe"> | </span>
+                    <span id="freq_m">M</span>
+                </div>
+                <span id="reset">Reset</span> <span id="export">Export</span>
+            </div>
+		</div>
+		<div id="series_display">
+			<div id="table_header">
+				<div id="series_header">&nbsp;</div>
+				<div id="sparkline_header">&nbsp;</div>
+                <div id="line_left_header"><br/>Compare</div>
+                <div id="ytd_header">&nbsp;<br/>Last Obs<br/>YTD %Chg</div>
+                <div id="datatable_header"><br/></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footnotes">
+		<div class="footnote" id="fn_pct_chg">* %CHG indicates the percentage change from the same period of the previous year.</div>
+		<div class="footnote" id="fn_affordability">* About the <a href="http://www.uhero.hawaii.edu/105/real-estate-indicators" target="_blank">affordability index</a></div>
+		<div class="footnote" id="fn_budget">* Due to omitted categories, revenues and expenditures may not sum to total in some cases.</div>
+	</div>
+
+  <div id="treemap_tooltip" class="hidden">
+    <p><span id="treemap_tooltip_heading"></span></p>
+    <p><span id="treemap_tooltip_value"></span></p>
+    <p><span id="treemap_tooltip_percentage"></span></p>
+  </div>
+	
+	<div id="source_links">
+		<div id="data_sources">
+			<div id="data_source_maj">Data Sources: <a href="https://www.hiwi.org/vosnet/Default.aspx" target="_blank">DLIR</a>, <a href="http://bea.gov" target="_blank">BEA</a>, <a href="http://www.bls.gov/data/" target="_blank">BLS</a>, <a href="http://www.census.gov/data.html" target="_blank">Census</a>, <a href="http://www.hawaiitourismauthority.org/research/" target="_blank">HTA</a>, <a href="http://dbedt.hawaii.gov/" target="_blank">State of Hawaii DBEDT</a></div>
+			<div id="data_source_vis">Data Sources: <a href="http://www.hawaiitourismauthority.org/research/" target="_blank">HTA</a>, <a href="http://www.hospitalityadvisors.com/" target="_blank">Hospitality Advisors LLC</a></div>
+			<div id="data_source_lab">Data Source: <a href="https://www.hiwi.org/vosnet/Default.aspx" target="_blank">DLIR</a></div>
+			<div id="data_source_per">Data Sources: <a href="http://bea.gov" target="_blank">BEA</a>, <a href="http://www.bls.gov/data/" target="_blank">BLS</a>, <a href="http://www.census.gov/data.html" target="_blank">Census</a></div>
+			<div id="data_source_con">Data Sources: <a href="https://www.hiwi.org/vosnet/Default.aspx" target="_blank">DLIR</a>, <a href="http://hbrhawaii.com/" target="_blank">HBR</a>, <a href="https://www.locationsllc.com/" target="_blank">Locations LLC</a>, <a href="http://dbedt.hawaii.gov/" target="_blank">DBEDT</a>, <a href="http://uhero.hawaii.edu" target="_blank">UHERO</a></div>
+			<div id="data_source_bud">Data Source: <a href="http://www.kauai.gov/" target="_blank">County of Kauai CAFR</a></div>
+		</div>
+		Designed by Adele Balderston, Ben Trevino, Jonathan Page, and Diliaur Tellei
+	</div>
+</div>
+        </div>
+
+    </div>
+
+    <footer>
+	<div id="dash-footer">
+
+		<div class="wrap-inner">
+
+			<p class="left">
+				2424 Maile Way, Saunders Hall 540 | Honolulu, Hawaii 96822<br />
+				(808) 956-2325 | <a href="mailto:uhero@hawaii.edu"><strong>uhero@hawaii.edu</strong></a>
+			</p>
+
+			<p class="right">
+				<strong>External Links</strong> <a href="http://www.economics.hawaii.edu/" target="_blank">Department of Economics</a> | <a href="http://www.ssri.hawaii.edu/" target="_blank">Social Science Research Institute</a> | <a href="http://www.socialsciences.hawaii.edu/" target="_blank">College of Social Sciences</a><br />
+				<strong>Website Design &amp; Development</strong> <a href="http://walltowall.com" target="_blank">Wall-to-Wall Studios</a>
+			</p>
+
+		</div>
+		<!-- / wrap-inner -->
+
+	</div>
+</footer>
+<script src="js/data_load.js"></script>
+<script src="js/time_series_chart.js"></script>
+<script src="js/time_slice_chart.js"></script>
+<script src="js/data_table.js"></script>
+<script src="js/viz.js"></script>
+<!--Gotham font includes-->
+  <script type="text/javascript" src="js2/swfobject.js"></script><script type="text/javascript" src="js2/cufon-yui.js"></script><script type="text/javascript" src="js2/TrajanPro_400-TrajanPro_700.font.js"></script><script type="text/javascript" src="js2/GothamLight_300.font.js"></script><script type="text/javascript" src="js2/GothamBold_400.font.js"></script>
+
+  </body>
+
+</html>
